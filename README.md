@@ -1,6 +1,6 @@
-# Jeu de stratégie au tour par tour – Génie Logiciel L3
-
 ## Présentation du projet
+
+# Jeu de stratégie au tour par tour – Génie Logiciel L3
 
 Ce projet est réalisé dans le cadre des travaux pratiques de **Génie Logiciel – Licence 3 Informatique**.
 
@@ -76,9 +76,7 @@ Les principaux fichiers du projet sont :
 | ------------------------------- | ------------------------------------------------------------------------------------------- |
 | `README.md`                     | Présentation et documentation du projet.                                                    |
 | `DigrammeClassePartie1.png`     | Image du diagramme de classes de la première partie.                                        |
-| `DigrammeClassePartie2.png`     | Image du diagramme de classes de la deuxième partie, si elle est disponible dans le dépôt.  |
-| `diagramme_partie1_modele.puml` | Fichier source PlantUML du diagramme de la première partie, s'il est présent dans le dépôt. |
-| `diagramme_partie2_mvc.puml`    | Fichier source PlantUML du diagramme de la deuxième partie, s'il est présent dans le dépôt. |
+| `DigrammeClassePartie2.png`     | A COMPLETER....                                                                             |
 | `LienDigrammeClasse`            | Fichier contenant les liens associés aux diagrammes de classes.                             |
 | `livraison/`                    | Répertoire destiné aux livrables du projet.                                                 |
 
@@ -110,30 +108,7 @@ livraison/
     └── rapport.pdf
 ```
 
-### Répertoire `src/`
 
-Ce répertoire contient le code source de l'application, accompagné de commentaires facilitant la compréhension des classes, des méthodes et des principales règles du jeu.
-
-### Répertoire `doc/`
-
-Ce répertoire contient la documentation technique générée avec Javadoc, permettant de consulter les classes et les méthodes de l'application.
-
-### Répertoire `dist/`
-
-Ce répertoire contient le fichier exécutable au format `.jar` ainsi que les éventuelles ressources nécessaires à l'exécution du jeu.
-
-### Répertoire `rapport/`
-
-Ce répertoire contient le rapport du projet au format PDF, d'environ 5 à 7 pages conformément aux consignes du cours.
-
-Le rapport présente notamment :
-
-- Le contexte et les objectifs du projet.
-- L'analyse des besoins et les règles du jeu.
-- Les choix de conception et l'architecture logicielle.
-- Les diagrammes UML.
-- Les principaux algorithmes et les éventuels patrons de conception utilisés.
-- Des captures d'écran de l'application, éventuellement placées en annexe.
 
 ## Gestion des versions
 
@@ -158,5 +133,4 @@ Projet réalisé dans le cadre des travaux pratiques de Génie Logiciel – L3 I
 
 Ce projet permet de mettre en pratique les principes de la conception logicielle et de la programmation orientée objet à travers la réalisation d'un jeu de stratégie au tour par tour.
 
-La modélisation UML, l'organisation de l'architecture et l'utilisation des outils de gestion de versions contribuent à structurer le développement et à faciliter la maintenance ainsi que l'évolution de l'application.
-
+A COMPLETER...
