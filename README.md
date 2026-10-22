@@ -1,48 +1,97 @@
-# Projet de Génie Logiciel – L3 Informatique
+# Jeu de stratégie au tour par tour – Génie Logiciel L3
 
 ## Présentation du projet
 
-Ce projet est réalisé dans le cadre des travaux pratiques de Génie Logiciel en Licence 3 Informatique.
+Ce projet est réalisé dans le cadre des travaux pratiques de **Génie Logiciel – Licence 3 Informatique**.
 
-Il a pour objectif de mettre en pratique les méthodes de conception logicielle et la modélisation UML, notamment à travers la réalisation de diagrammes de classes.
+Il consiste à concevoir et à développer une application de jeu de combat stratégique au tour par tour. Le jeu oppose entre **2 et n joueurs** sur une grille en deux dimensions dont la taille est paramétrable.
 
-## Objectifs
+Chaque joueur contrôle un combattant disposant initialement d'une certaine quantité d'énergie et de plusieurs armes de différents types. Les armes possèdent des munitions en quantité limitée, ce qui oblige les joueurs à gérer leurs ressources et à adapter leur stratégie au cours de la partie.
 
-Les principaux objectifs du projet sont :
-- Comprendre et appliquer les principes de conception logicielle.
-- Modéliser un système à l'aide de diagrammes UML.
-- Représenter les classes, leurs attributs, leurs méthodes et leurs relations.
-- Utiliser PlantUML pour décrire les diagrammes.
-- Utiliser Git et les dépôts distants pour gérer les versions du projet et faciliter le travail collaboratif.
+Le projet vise à appliquer les principes de conception logicielle, la modélisation UML et les méthodes de développement orienté objet afin de proposer une architecture claire, cohérente et évolutive.
+
+## Objectifs du projet
+
+Les principaux objectifs sont les suivants :
+
+- Concevoir un jeu de combat stratégique au tour par tour.
+- Permettre à plusieurs joueurs de s'affronter sur une grille en deux dimensions.
+- Rendre la taille de la grille paramétrable.
+- Modéliser les combattants, leurs caractéristiques, leurs armes et leurs munitions.
+- Représenter les éléments du jeu à l'aide de diagrammes UML.
+- Définir une architecture logicielle adaptée, notamment selon le modèle MVC si celui-ci est retenu dans la conception.
+- Appliquer les principes de la programmation orientée objet.
+- Utiliser Git pour gérer les versions du projet et faciliter le travail collaboratif.
+
+## Description générale du jeu
+
+### Terrain de jeu
+
+Le jeu se déroule sur une grille en deux dimensions dont les dimensions peuvent être définies selon les paramètres de la partie.
+
+Cette grille constitue l'espace dans lequel évoluent les combattants. Elle permet de représenter leurs positions et de structurer les déplacements au cours du jeu.
+
+### Joueurs et combattants
+
+Une partie oppose au minimum deux joueurs, avec la possibilité d'en accueillir davantage.
+
+Chaque joueur contrôle un combattant possédant notamment :
+
+- Une quantité initiale d'énergie.
+- Une position sur la grille.
+- Des armes de différents types.
+- Une réserve de munitions limitée pour ses armes.
+
+### Armes et munitions
+
+Les combattants disposent de plusieurs types d'armes. Chaque arme possède ses propres caractéristiques, selon les règles qui seront définies pour le jeu.
+
+Les munitions étant limitées, les joueurs doivent choisir leurs actions avec attention afin de gérer efficacement leurs ressources.
+
+### Déroulement des tours
+
+Le jeu repose sur un système de tours successifs. Chaque joueur intervient à son tour pour effectuer les actions autorisées par les règles du jeu.
+
+Les conditions précises de déplacement, d'attaque, de consommation d'énergie et de victoire seront définies conformément à l'énoncé complet du projet.
+
+## Conception et modélisation UML
+
+La conception du logiciel s'appuie sur la modélisation UML afin de représenter les principaux éléments du jeu et leurs interactions.
+
+Les diagrammes permettent notamment d'étudier :
+
+- Les classes représentant le jeu, la grille, les joueurs, les combattants et les armes.
+- Les attributs et les méthodes des différentes classes.
+- Les relations entre les objets du jeu.
+- Le déroulement des actions et des tours.
+- L'organisation de l'architecture logicielle.
+
+PlantUML est utilisé pour décrire les diagrammes à partir de fichiers texte et faciliter leur modification.
 
 ## Contenu du dépôt
 
 Les principaux fichiers du projet sont :
 
-| Fichier | Description |
-|---|---|
-| `README.md` | Présentation et documentation du projet. |
-| `DigrammeClassePartie1.png` | Image du diagramme de classes de la première partie. |
-| `DigrammeClassePartie2.png` | Image du diagramme de classes de la deuxième partie, si elle est disponible dans le dépôt. |
-| `diagramme_partie1_modele.puml` | Fichier source PlantUML du diagramme de la première partie. |
-| `diagramme_partie2_mvc.puml` | Fichier source PlantUML du diagramme de la deuxième partie. |
-| `LienDigrammeClasse` | Fichier contenant les liens associés aux diagrammes de classes. |
+| Fichier ou répertoire           | Description                                                                                 |
+| ------------------------------- | ------------------------------------------------------------------------------------------- |
+| `README.md`                     | Présentation et documentation du projet.                                                    |
+| `DigrammeClassePartie1.png`     | Image du diagramme de classes de la première partie.                                        |
+| `DigrammeClassePartie2.png`     | Image du diagramme de classes de la deuxième partie, si elle est disponible dans le dépôt.  |
+| `diagramme_partie1_modele.puml` | Fichier source PlantUML du diagramme de la première partie, s'il est présent dans le dépôt. |
+| `diagramme_partie2_mvc.puml`    | Fichier source PlantUML du diagramme de la deuxième partie, s'il est présent dans le dépôt. |
+| `LienDigrammeClasse`            | Fichier contenant les liens associés aux diagrammes de classes.                             |
+| `livraison/`                    | Répertoire destiné aux livrables du projet.                                                 |
+
+*Remarque : cette liste doit être adaptée aux fichiers réellement présents dans le dépôt.*
 
 ## Outils utilisés
 
-- **UML** : modélisation et représentation du système.
-- **PlantUML** : création de diagrammes à partir de fichiers texte.
-- **Git** : gestion des versions du projet.
-- **GitHub et Redmine** : hébergement du dépôt et suivi du travail.
-
-## Gestion des versions
-
-Le projet est versionné avec Git.
-
-Les modifications sont enregistrées sous forme de commits, puis publiées sur les dépôts distants afin de conserver un historique du travail réalisé.
-
-- **GitHub** : dépôt du projet.
-- **Redmine** : dépôt associé au projet universitaire.
+- **Java**, si retenu pour l'implémentation : développement de l'application.
+- **UML** : modélisation et conception du logiciel.
+- **PlantUML** : création des diagrammes UML.
+- **Git** : gestion des versions et suivi des modifications.
+- **GitHub** : hébergement du dépôt du projet.
+- **Redmine** : hébergement du dépôt universitaire et suivi du projet.
 
 ## Organisation des livrables
 
@@ -61,12 +110,41 @@ livraison/
     └── rapport.pdf
 ```
 
-### Description des livrables
+### Répertoire `src/`
 
-- **`src/`** : contient le code source du logiciel, accompagné de commentaires.
-- **`doc/`** : contient la documentation technique générée avec Javadoc.
-- **`dist/`** : contient le fichier exécutable `.jar` et les éventuelles ressources nécessaires à l'exécution.
-- **`rapport/`** : contient le rapport du projet au format PDF, d'environ 5 à 7 pages, présentant la conception, les diagrammes UML, les choix de conception et les algorithmes importants. Des captures d'écran peuvent être ajoutées en annexe conformément aux consignes du cours.
+Ce répertoire contient le code source de l'application, accompagné de commentaires facilitant la compréhension des classes, des méthodes et des principales règles du jeu.
+
+### Répertoire `doc/`
+
+Ce répertoire contient la documentation technique générée avec Javadoc, permettant de consulter les classes et les méthodes de l'application.
+
+### Répertoire `dist/`
+
+Ce répertoire contient le fichier exécutable au format `.jar` ainsi que les éventuelles ressources nécessaires à l'exécution du jeu.
+
+### Répertoire `rapport/`
+
+Ce répertoire contient le rapport du projet au format PDF, d'environ 5 à 7 pages conformément aux consignes du cours.
+
+Le rapport présente notamment :
+
+- Le contexte et les objectifs du projet.
+- L'analyse des besoins et les règles du jeu.
+- Les choix de conception et l'architecture logicielle.
+- Les diagrammes UML.
+- Les principaux algorithmes et les éventuels patrons de conception utilisés.
+- Des captures d'écran de l'application, éventuellement placées en annexe.
+
+## Gestion des versions
+
+Le projet utilise Git pour suivre les modifications et conserver l'historique du développement.
+
+Les modifications sont enregistrées sous forme de commits, puis envoyées vers les dépôts distants concernés.
+
+- **GitHub** : dépôt du projet.
+- **Redmine** : dépôt associé au projet universitaire.
+
+Il est recommandé de vérifier régulièrement l'état du dépôt avec `git status` et de rédiger des messages de commit décrivant clairement les modifications effectuées.
 
 ## Auteurs
 
@@ -78,4 +156,7 @@ Projet réalisé dans le cadre des travaux pratiques de Génie Logiciel – L3 I
 
 ## Conclusion
 
+Ce projet permet de mettre en pratique les principes de la conception logicielle et de la programmation orientée objet à travers la réalisation d'un jeu de stratégie au tour par tour.
+
+La modélisation UML, l'organisation de l'architecture et l'utilisation des outils de gestion de versions contribuent à structurer le développement et à faciliter la maintenance ainsi que l'évolution de l'application.
 
