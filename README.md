@@ -1,5 +1,3 @@
-# TP_Genie_Logiciel_L3
-
 # Projet de Génie Logiciel – L3 Informatique
 
 ## Présentation du projet
@@ -46,15 +44,38 @@ Les modifications sont enregistrées sous forme de commits, puis publiées sur l
 - **GitHub** : dépôt du projet.
 - **Redmine** : dépôt associé au projet universitaire.
 
+## Organisation des livrables
+
+Le répertoire `livraison/` doit contenir les éléments nécessaires à la remise du projet.
+
+```text
+livraison/
+├── src/
+│   └── Code source commenté
+├── doc/
+│   └── Documentation Javadoc
+├── dist/
+│   ├── application.jar
+│   └── Ressources nécessaires à l'exécution
+└── rapport/
+    └── rapport.pdf
+```
+
+### Description des livrables
+
+- **`src/`** : contient le code source du logiciel, accompagné de commentaires.
+- **`doc/`** : contient la documentation technique générée avec Javadoc.
+- **`dist/`** : contient le fichier exécutable `.jar` et les éventuelles ressources nécessaires à l'exécution.
+- **`rapport/`** : contient le rapport du projet au format PDF, d'environ 5 à 7 pages, présentant la conception, les diagrammes UML, les choix de conception et les algorithmes importants. Des captures d'écran peuvent être ajoutées en annexe conformément aux consignes du cours.
+
 ## Auteurs
 
 Projet réalisé dans le cadre des travaux pratiques de Génie Logiciel – L3 Informatique.
 
-Les noms des membres du groupe sont à compléter ici :
-- Mussa Abdallah Tayib, du groupe 1A de Monsieur Yann Mathet
-- Adam Yassine, du groupe 4B de Madame Amal Mahboubi
-- Abdell-Rahmmen Benkrama, du groupe 4B de Madame Amal Mahboubi
+- **Mussa Abdallah Tayib** — Groupe 1A, encadré par Monsieur Yann Mathet.
+- **Adam Yassine** — Groupe 4B, encadré par Madame Amal Mahboubi.
+- **Abdell-Rahmmen Benkrama** — Groupe 4B, encadré par Madame Amal Mahboubi.
 
 ## Conclusion
 
-Ce projet permet de mettre en pratique les principes de conception logicielle, la modélisation UML et la gestion de versions avec Git, tout en développant les compétences nécessaires au travail collaboratif.
+
