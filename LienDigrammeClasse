@@ -6,7 +6,7 @@ Pattern Strategy : StrategieRobot et StrategieRemplissageGrille.
 Pattern Factory Method : CombattantFactory et ses deux variantes.
 Pattern Singleton : Parametres.
 ## Lien de Diagramme de partie1 :  urlr.me/JHfP9R
-
+## Lien vers depot GitHub: https://github.com/BirackInit/TP_Genie_Logiciel_L3
 
 Nous avons utilié https://urlr.me/ pour reduire de taille l'URL de Diagramme de classe:
 
