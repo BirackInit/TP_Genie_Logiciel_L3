@@ -1,0 +1,175 @@
+@startuml diagramme_partie1_modele
+title Partie 1/2 - Modèle du jeu (Command, Strategy, Factory Method, Singleton)
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+hide empty members
+skinparam class {
+  BackgroundColor White
+  BorderColor #444444
+}
+
+package "modele" #F4F8FF {
+
+  interface Jeu {
+    + getLargeur() : int
+    + getHauteur() : int
+    + getCase(x : int, y : int) : Case
+    + getArmesDeposees() : List<ArmeDeposee>
+    + estTermine() : boolean
+  }
+
+  class JeuConcret {
+    - tourCourant : int
+    - ordreAleatoire : boolean
+    - combattants : List<Combattant>
+    - armesDeposees : List<ArmeDeposee>
+    + jouerTour()
+    + getGagnant() : Combattant
+  }
+
+  class Grille {
+    - largeur : int
+    - hauteur : int
+    - cases : Case[][]
+    + getCase(x : int, y : int) : Case
+    + estPositionValide(x : int, y : int) : boolean
+  }
+
+  class Case {
+    - mur : boolean
+    - pastilleEnergie : int
+    - combattant : Combattant
+    + estLibre() : boolean
+  }
+
+  abstract class Combattant {
+    # nom : String
+    # energie : int
+    # x : int
+    # y : int
+    # bouclierActif : boolean
+    # munitions : Map<TypeArme, int>
+    + {abstract} choisirAction(m : Jeu) : Action
+    + perdreEnergie(valeur : int)
+    + estVivant() : boolean
+  }
+  class JoueurHumain
+  class JoueurRobot {
+    - strategie : StrategieRobot
+  }
+
+  enum TypeArme {
+    TIR
+    MINE
+    BOMBE
+  }
+  enum Visibilite {
+    TOUS
+    PROPRIETAIRE
+  }
+  enum Direction {
+    HAUT
+    BAS
+    GAUCHE
+    DROITE
+  }
+
+  abstract class ArmeDeposee {
+    # x : int
+    # y : int
+    # proprietaire : Combattant
+    # visibilite : Visibilite
+    + estVisiblePour(c : Combattant) : boolean
+  }
+  class Mine
+  class Bombe {
+    - compteARebours : int
+  }
+
+  class Parametres <<Singleton>> {
+    - {static} instance : Parametres
+    + {static} getInstance() : Parametres
+    énergie initiale, coûts (déplacement, bouclier),
+    dégâts (tir, explosion), portée du tir, délai bombe, taille grille
+  }
+
+  interface Action {
+    + executer(jeu : JeuConcret, c : Combattant)
+  }
+  class Deplacement {
+    - direction : Direction
+  }
+  class DeposerMine
+  class DeposerBombe
+  class TirHorizontal
+  class TirVertical
+  class DeclencherBouclier
+  class NeRienFaire
+}
+
+package "modele.strategy" #FFFAF0 {
+  interface StrategieRobot {
+    + choisirAction(m : Jeu, c : Combattant) : Action
+  }
+  class StrategieAleatoire
+  class StrategieAvancee
+
+  interface StrategieRemplissageGrille {
+    + remplir(grille : Grille, combattants : List<Combattant>)
+  }
+  class RemplissageAleatoire
+}
+
+package "modele.factory" #F5FFF5 {
+  abstract class CombattantFactory {
+    + {abstract} creer(nom : String) : Combattant
+  }
+  class CombattantRobusteFactory
+  class CombattantArmeFactory
+}
+
+' ---------------- Structure ----------------
+Jeu <|.. JeuConcret
+JeuConcret *-- "1" Grille
+Grille *-- "largeur x hauteur" Case
+JeuConcret o-- "2..n" Combattant
+JeuConcret *-- "*" ArmeDeposee
+JeuConcret --> "1" Parametres
+JeuConcret --> "1" StrategieRemplissageGrille
+Combattant <|-- JoueurHumain
+Combattant <|-- JoueurRobot
+Combattant ..> TypeArme : munitions
+JoueurRobot --> "1" StrategieRobot
+ArmeDeposee <|-- Mine
+ArmeDeposee <|-- Bombe
+ArmeDeposee --> Visibilite
+
+' ---------------- Command ----------------
+JeuConcret ..> Action : exécute
+Action <|.. Deplacement
+Action <|.. DeposerMine
+Action <|.. DeposerBombe
+Action <|.. TirHorizontal
+Action <|.. TirVertical
+Action <|.. DeclencherBouclier
+Action <|.. NeRienFaire
+Deplacement --> Direction
+
+' ---------------- Strategy ----------------
+StrategieRobot <|.. StrategieAleatoire
+StrategieRobot <|.. StrategieAvancee
+StrategieRemplissageGrille <|.. RemplissageAleatoire
+
+' ---------------- Factory Method ----------------
+CombattantFactory <|-- CombattantRobusteFactory
+CombattantFactory <|-- CombattantArmeFactory
+CombattantFactory ..> Combattant : <<crée>>
+
+note bottom of Jeu
+  Interface en lecture seule du jeu :
+  utilisée par les vues, les stratégies
+  et le proxy (voir partie 2).
+end note
+@enduml
