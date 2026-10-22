@@ -1,30 +1,14 @@
-## Partie 1 : Modèle du jeu (`diagramme_partie1_modele.puml`)
-
+Partie 1 : le modèle du jeu (diagramme_partie1_modele.puml)
 Cette première partie présente le modèle du jeu et les principaux éléments qui structurent son fonctionnement.
 
-### 1. Le noyau du modèle
+Le noyau : Jeu (interface), JeuConcret, Grille, Case, Combattant (JoueurHumain, JoueurRobot), ArmeDeposee (Mine, Bombe), et les enums TypeArme, Visibilite et Direction.
+Pattern Command : l’interface Action et ses 7 actions.
+Pattern Strategy : StrategieRobot et StrategieRemplissageGrille.
+Pattern Factory Method : CombattantFactory et ses deux variantes.
+Pattern Singleton : Parametres.
+## Lien de Diagramme de partie1 :  urlr.me/JHfP9R
+## Lien vers depot GitHub: https://github.com/BirackInit/TP_Genie_Logiciel_L3
 
-Le noyau du jeu comprend les éléments suivants :
-- **`Jeu` (interface) et `JeuConcret`** : définissent le contrat du jeu et son implémentation concrète.
-- **`Grille` et `Case`** : représentent le plateau de jeu et les cases qui le composent.
-- **`Combattant`**, avec ses deux variantes `JoueurHumain` et `JoueurRobot` : représente les participants à la partie.
-- **`ArmeDeposee`**, avec ses variantes `Mine` et `Bombe` : représente les armes pouvant être déposées sur la grille.
-- **Les énumérations `TypeArme`, `Visibilite` et `Direction`** : définissent respectivement les types d'armes, les niveaux de visibilité et les directions possibles.
-
-### 2. Les patrons de conception utilisés
-
-Le modèle intègre plusieurs patrons de conception afin de structurer le code et de séparer les responsabilités :
-
-- **Patron Command** : l'interface `Action` et ses sept implémentations encapsulent les actions réalisables dans le jeu.
-- **Patron Strategy** : `StrategieRobot` et `StrategieRemplissageGrille` permettent de définir et de faire varier les comportements des robots et les stratégies de remplissage de la grille.
-- **Patron Factory Method** : `CombattantFactory` et ses deux variantes organisent la création des différents types de combattants.
-- **Patron Singleton** : `Parametres` centralise les paramètres partagés du jeu et garantit une instance unique, conformément à l'implémentation retenue.
-
-### 3. Liens et ressources
-
-- **Diagramme de classes — Partie 1 :** [Consulter le diagramme](https://urlr.me/JHfP9R)
-- **Dépôt GitHub du projet :** [TP_Genie_Logiciel_L3](https://github.com/BirackInit/TP_Genie_Logiciel_L3)
-
-**Remarque :** le service [URLR](https://urlr.me/) a été utilisé pour raccourcir l'adresse du diagramme de classes et faciliter son partage.
+Nous avons utilié https://urlr.me/ pour reduire de taille l'URL de Diagramme de classe:
 
 
