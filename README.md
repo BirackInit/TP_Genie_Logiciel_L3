@@ -98,14 +98,17 @@ Le répertoire `livraison/` doit contenir les éléments nécessaires à la remi
 ```text
 livraison/
 ├── src/
-│   └── Code source commenté
+│   └── modele/
+│   └── observer/
+│   └── strategy
+│   └── factory
+│   └── controleur
+│   └── vue
 ├── doc/
-│   └── Documentation Javadoc
+│
 ├── dist/
-│   ├── application.jar
-│   └── Ressources nécessaires à l'exécution
+│
 └── rapport/
-    └── rapport.pdf
 ```
 
 
