@@ -1,4 +1,4 @@
-Partie 1 : le modèle du jeu (diagramme_partie1_modele.puml)
+Prototype 1 : le modèle du jeu (diagramme_prototype1_modele.puml)
 Cette première partie présente le modèle du jeu et les principaux éléments qui structurent son fonctionnement.
 
 Le noyau : Jeu (interface), JeuConcret, Grille, Case, Combattant (JoueurHumain, JoueurRobot), ArmeDeposee (Mine, Bombe), et les enums TypeArme, Visibilite et Direction.
